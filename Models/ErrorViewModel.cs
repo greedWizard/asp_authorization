@@ -4,11 +4,9 @@ namespace WebApplication1.Models
 {
     public class LoginModel
     {
-        // [Display(nameof="Login")]
         public string login { get; set; }
-        //[Display(nameof = "Password")]
         public string password { get; set; }
-        public bool? Success { get; set; }
+        public bool logInSuccess { get; set; }
     }
     public class ErrorViewModel
     {

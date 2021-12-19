@@ -4,10 +4,10 @@
     @Html.LabelFor(x => Model.login)
     @Html.EditorFor(x => Model.login)
     @Html.LabelFor(x => Model.password)
-    @Html.EditorFor(x => Model.password, new { type = "password" })<br/>
-    <input type="submit" value="Send"/>
+    @Html.PasswordFor(x => Model.password)<br/>
+    <input type="submit" value="Log In"/>
 </form>
-@if (!Model?.Success ?? false)
+@if (Model?.logInSuccess == false)
 {
-<div>Имя пользователя или пароль неверны</div>
+<div>Invalid credentials</div>
 }

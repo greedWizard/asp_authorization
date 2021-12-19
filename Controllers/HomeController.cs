@@ -39,12 +39,12 @@ namespace WebApplication1.Controllers
         public IActionResult Account(LoginModel model)
         {
 
-            model.Success = _userService.CheckCredentials(model.login, model.password);
-            if (model.Success ?? false)
+            model.logInSuccess = _userService.CheckCredentials(model.login, model.password);
+            if (model.logInSuccess == true)
             {
                 return RedirectToAction("Index", "Home");
             }
-                return View(model);
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
